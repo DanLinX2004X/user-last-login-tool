@@ -11,7 +11,7 @@ license=('MIT')
 depends=('bash' 'shadow' 'util-linux')
 # Source location (tarball from your GitHub repository tag)
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/v${pkgver}.tar.gz")
-sha256sums=('bc4dbce7e7902976658ef74be5d3f39ead461f1a3bc78e289f74e1abe019a08f')
+sha256sums=('a0a6d4bc71cd4e6625dfe0e31c1e13a2bb7dfa404085e6bfaa6809ac0ca97434')
 
 # -----------------------------------------------------------------------------
 # build()
