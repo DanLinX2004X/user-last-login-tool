@@ -1,0 +1,17 @@
+# debian/control
+
+Source: user-last-login-tool
+Section: utils
+Priority: optional
+Maintainer: DanLIn <dan.laktionov.io@gmail.com>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.6.0
+Homepage: https://github.com/DanLinX2004X/user-last-login-tool
+
+Package: user-last-login-tool
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, bash, coreutils, shadow, util-linux
+Description: SRE tool to report last login times for system users.
+ This script analyzes system logs to generate a CSV report of user last login dates
+ using system utilities like **last (wtmp) and lastlog**. This cascading logic
+ ensures reliability across modern and centralized systems.

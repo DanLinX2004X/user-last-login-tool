@@ -1,0 +1,9 @@
+# debian/changelog
+
+user-last-login-tool (1.0.0) unstable; urgency=medium
+
+  * Initial release.
+  * Added SRE tool for last login report.
+  * Includes man page and MIT license.
+
+ -- DanLin <dan.laktionov.io@gmail.com>  Fri, 28 Nov 2025 22:48:00 +0100

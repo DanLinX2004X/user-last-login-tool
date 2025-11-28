@@ -1,0 +1,29 @@
+# 1. Git and CI/CD Files
+.git
+.gitignore
+.gitattributes
+.github
+
+# 2. Testing and Build Artifacts
+# Exclude the test directory
+tests/
+
+# Exclude all packaging files (not needed for running the script inside Docker)
+debian/
+*.spec
+PKGBUILD
+build_test/
+
+
+# 3. Documentation and Licensing (reduce context size)
+README.md
+README.ru.md
+LICENSE
+user_last_login.1
+
+# 4. Local Run Artifacts (potential large data/logs)
+*.csv
+*.log
+*.tmp
+tmp/
+logs/

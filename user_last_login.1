@@ -1,0 +1,59 @@
+.TH USER_LAST_LOGIN 1 "November 2025" "v1.0.0" "SRE Tools"
+.SH NAME
+user_last_login.sh \- Generates a CSV report detailing the last login time for system users.
+.SH SYNOPSIS
+.B user_last_login.sh
+.RB [ -u ]
+.I MIN_UID
+.RB [ -d ]
+.I REPORT_DIR
+.RB [ -h | --help ]
+.RB [ -v | --version ]
+.SH DESCRIPTION
+.B user_last_login.sh
+analyzes user login records using
+.B last
+(wtmp) and
+.B lastlog
+to produce a comma-separated values (CSV) report. This cascading logic ensures reliability across modern and centralized (LDAP/SSSD) Linux systems.
+.PP
+The script only processes users whose User ID (UID) is greater than the specified minimum
+(default is 1000) and outputs the username, last login date, and the number of days since that login.
+.SH OPTIONS
+.TP
+.BR \-u ", " \-\-uid " " I<MIN_UID>
+Sets the minimum User ID (UID) to include in the report.
+Defaults to 1000.
+.TP
+.BR \-d ", " \-\-dir " " I<REPORT_DIR>
+Sets an alternative path for saving the CSV report.
+Defaults to /opt/sre-reports.
+.TP
+.BR \-h ", " \-\-help
+Display the help message and exit.
+.TP
+.BR \-v ", " \-\-version
+Display script version information and exit.
+.SH FILES
+.TP
+.B /etc/passwd
+Used to retrieve the list of users via
+.B getent (3).
+.TP
+.B /var/log/wtmp
+The primary log file analyzed via
+.B last (1)
+for interactive login records.
+.TP
+.B /var/log/lastlog
+The secondary log file analyzed for non-interactive (e.g., system/SSSD) login records.
+.SH DIAGNOSTICS
+Execution logs are saved to
+.B /var/log/sre\-tools/user_last_login.log
+.SH AUTHOR
+Script developed for SRE/DevOps purposes.
+.SH SEE ALSO
+.BR last (1),
+.BR lastlog (8),
+.BR getent (3),
+.BR passwd (5)

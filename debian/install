@@ -1,0 +1,7 @@
+# debian/install
+
+# Install the executable script into /usr/bin/
+user_last_login.sh usr/bin
+
+# Install the man page into /usr/share/man/man1/
+user_last_login.1 usr/share/man/man1

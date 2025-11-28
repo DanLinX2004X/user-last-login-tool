@@ -1,0 +1,12 @@
+#!/usr/bin/make -f
+# debian/rules
+
+# Set debhelper compatibility level to 13
+export DH_COMPAT = 13
+
+# Verbose output during packaging
+export DH_VERBOSE = 1
+
+# Tell debhelper to run all its standard sequence targets (clean, build, install, etc.)
+%:
+	dh $@

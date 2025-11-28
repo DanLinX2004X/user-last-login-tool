@@ -1,0 +1,41 @@
+# ===================================================
+# 1. End-of-Line Normalization (EOL)
+#    Ensures all text files use LF (Linux/macOS standard)
+# ===================================================
+
+# Scripts, Makefiles, Documentation, Specs, etc.
+*.sh         text eol=lf
+Makefile     text eol=lf
+*.1          text eol=lf
+*.md         text eol=lf
+Dockerfile   text eol=lf
+*.spec       text eol=lf
+*.yml        text eol=lf
+* text eol=lf
+
+# ===================================================
+# 2. GitHub Linguist Overrides and Detection
+#    Ensures correct language display in GitHub's stats
+# ===================================================
+
+user_last_login.sh  linguist-language=Shell
+Makefile            linguist-language=Makefile
+Dockerfile          linguist-language=Dockerfile
+*.1                 linguist-detectable=false
+LICENSE             linguist-detectable=false
+*.md                linguist-detectable=false
+debian/* linguist-detectable=false
+*.spec              linguist-detectable=false
+PKGBUILD            linguist-detectable=false
+
+# ===================================================
+# 3. Archive Optimization (export-ignore)
+#    Excludes temporary files/folders when GitHub creates a ZIP/TAR archive
+# ===================================================
+
+tests/              export-ignore
+.github/            export-ignore
+build_test/         export-ignore
+*.tar.gz            export-ignore
+*.rpm               export-ignore
+*.deb               export-ignore
