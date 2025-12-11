@@ -10,4 +10,4 @@ COPY user_last_login.sh .
 RUN chmod +x user_last_login.sh
 
 ENTRYPOINT ["/usr/local/bin/user_last_login.sh"]
-CMD ["--help"]
+CMD []
